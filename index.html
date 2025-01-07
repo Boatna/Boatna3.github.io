@@ -161,7 +161,7 @@
                         <button type="submit">ลงทะเบียน</button>
                     </div>
                 </form>
-                <p id="responseMessage"></p>
+                <div id="responseMessage" style="margin-top: 10px; font-weight: bold;"></div>
             </div>
         </section>
     </main>
@@ -175,23 +175,28 @@
         const responseMessage = document.getElementById('responseMessage');
 
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // ป้องกันการส่งฟอร์มโดยตรง
+    event.preventDefault(); // ป้องกันการส่งฟอร์มโดยตรง
 
-            const name = document.getElementById('name').value;
-            const employeeId = document.getElementById('employeeId').value;
-            const department = document.getElementById('department').value;
-            const course = document.getElementById('course').value;
+    const name = document.getElementById('name').value;
+    const employeeId = document.getElementById('employeeId').value;
+    const department = document.getElementById('department').value;
+    const course = document.getElementById('course').value;
+    const responseMessage = document.getElementById('responseMessage'); // เพิ่มตัวแปรข้อความตอบกลับ
 
-            if (name && employeeId && department && course) {
-                // แสดงข้อความตอบรับ
-                responseMessage.textContent = `ขอบคุณ, ${name} ที่ลงทะเบียนเข้าอบรมหลักสูตร ${course} เรียบร้อยแล้ว!`;
-                responseMessage.style.color = '#28a745'; // สีเขียวสำหรับข้อความสำเร็จ
-                form.reset(); // รีเซ็ตฟอร์มหลังจากส่ง
-            } else {
-                responseMessage.textContent = 'กรุณากรอกข้อมูลให้ครบถ้วน';
-                responseMessage.style.color = '#dc3545'; // สีแดงสำหรับข้อความผิดพลาด
-            }
-        });
+    if (name && employeeId && department && course) {
+        // แสดงข้อความตอบรับ
+        responseMessage.textContent = `ขอบคุณ, ${name} ที่ลงทะเบียนเข้าอบรมหลักสูตร ${course} เรียบร้อยแล้ว!`;
+        responseMessage.style.color = '#28a745'; // สีเขียวสำหรับข้อความสำเร็จ
+
+        // เปลี่ยนหน้าไปยัง Home-page.html
+        setTimeout(function() {
+            window.location.href = 'Home-page.html';
+        }, 2000); // ใช้เวลา 2 วินาทีหลังจากแสดงข้อความเพื่อเปลี่ยนหน้า
+    } else {
+        responseMessage.textContent = 'กรุณากรอกข้อมูลให้ครบถ้วน';
+        responseMessage.style.color = '#dc3545'; // สีแดงสำหรับข้อความผิดพลาด
+    }
+});
     </script>
 </body>
 </html>

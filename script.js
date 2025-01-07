@@ -1,32 +1,25 @@
-// ฟังก์ชันจัดการเมื่อผู้ใช้ส่งฟอร์ม
-document.getElementById('trainingForm').addEventListener('submit', async function (event) {
+form.addEventListener('submit', function(event) {
     event.preventDefault(); // ป้องกันการส่งฟอร์มโดยตรง
 
-    // เก็บข้อมูลจากฟอร์ม
     const name = document.getElementById('name').value;
-    const employeeId = document.getElementById('employee_id').value;
+    const employeeId = document.getElementById('employeeId').value;
     const department = document.getElementById('department').value;
     const course = document.getElementById('course').value;
-    const responseMessage = document.getElementById('responseMessage'); // ข้อความแสดงผล
+    const responseMessage = document.getElementById('responseMessage'); // เพิ่มตัวแปรข้อความตอบกลับ
 
-    // ตรวจสอบว่ากรอกข้อมูลครบหรือไม่
-    if (!name || !employeeId || !department || !course) {
-        responseMessage.textContent = 'กรุณากรอกข้อมูลให้ครบถ้วน!';
+    if (name && employeeId && department && course) {
+        // แสดงข้อความตอบรับ
+        responseMessage.textContent = `ขอบคุณ, ${name} ที่ลงทะเบียนเข้าอบรมหลักสูตร ${course} เรียบร้อยแล้ว!`;
+        responseMessage.style.color = '#28a745'; // สีเขียวสำหรับข้อความสำเร็จ
+
+        // เปลี่ยนหน้าไปยัง Home-page.html
+        setTimeout(function() {
+            window.location.href = 'Home-page.html';
+        }, 2000); // ใช้เวลา 2 วินาทีหลังจากแสดงข้อความเพื่อเปลี่ยนหน้า
+    } else {
+        responseMessage.textContent = 'กรุณากรอกข้อมูลให้ครบถ้วน';
         responseMessage.style.color = '#dc3545'; // สีแดงสำหรับข้อความผิดพลาด
-        return;
     }
-
-    // แสดงข้อความตอบรับ
-    responseMessage.textContent = `ขอบคุณ, ${name} ที่ลงทะเบียนเข้าอบรมหลักสูตร ${course} เรียบร้อยแล้ว!`;
-    responseMessage.style.color = '#28a745'; // สีเขียวสำหรับข้อความสำเร็จ
-
-    // บันทึกข้อมูลผู้ใช้ใน Local Storage
-    localStorage.setItem('userName', name);
-
-    // เปลี่ยนหน้าไปยัง Home-page.html หลังจากแสดงข้อความ 2 วินาที
-    setTimeout(function () {
-        window.location.href = 'Home-page.html';
-    }, 2000);
 });
 
 // ฟังก์ชันตรวจสอบสถานะผู้ใช้เมื่อโหลดหน้าเว็บ
