@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $department = $_POST['department'];
     $course = $_POST['course'];
 
-    $to = "admin@yourcompany.com"; // เปลี่ยนเป็นอีเมลผู้ดูแลระบบ
+    $to = "patipol.p@bitwise.co.th"; // เปลี่ยนเป็นอีเมลผู้ดูแลระบบ
     $subject = "ข้อมูลการอบรมพนักงาน";
     $message = "
     มีข้อมูลใหม่จากระบบอบรมพนักงาน:
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     แผนก: $department
     หลักสูตรที่อบรม: $course
     ";
-    $headers = "From: no-reply@yourdomain.com";
+    $headers = "From: patipol.p@bitwise.co.th";
 
     if (mail($to, $subject, $message, $headers)) {
         echo "ข้อมูลถูกส่งเรียบร้อย!";
