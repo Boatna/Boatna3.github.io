@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบค้นหาข้อมูลพนักงาน</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=TH+Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="Bitwise-BW.png" alt="Logo 1" class="logo1">
+        </header>
+        <div class="logo logo2">
+            <img src="hellow.png" alt="Logo 2">
+        </div>
+        <h1>กรุณากรอกข้อมูลที่ต้องการค้นหา</h1>
+        
+        <input type="text" id="query" placeholder="กรอกข้อมูลที่ต้องการค้นหา" />
+        <button id="search-btn">ค้นหา</button>
+
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <span id="popup-close" class="popup-close">&times;</span>
+                <h2 id="popup-title"></h2>
+                <p id="popup-message"></p>
+            </div>
+        </div>
+        <!-- Add this HTML for the loading spinner -->
+<div id="loading-spinner" class="hidden">
+    <p>กำลังโหลดข้อมูล...</p>
+</div>  
+        <textarea id="result" readonly></textarea>
+        
+        <p id="error-message"></p>
+    </div>
+
+    <footer>
+        <p>© 2025 ระบบค้นหาข้อมูลพนักงาน | <a href="contact.html">ติดต่อเรา</a></p>
+    </footer>
+
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
