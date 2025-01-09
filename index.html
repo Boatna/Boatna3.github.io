@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบค้นหาข้อมูลพนักงาน</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=TH+Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="language-switcher">
+        <!-- ไอคอนรูปโลก -->
+        <span id="language-icon" class="language-toggle">🌍</span>
+        <!-- Dropdown menu ภาษา -->
+        <div id="language-dropdown" class="hidden">
+            <button data-lang="th">ไทย</button>
+            <button data-lang="en">English</button>
+            <button data-lang="mm">မြန်မာ</button>
+        </div>
+    </div>    
+    <div class="container">
+        <div class="logo logo2">
+            <img src="Bitwise-BW.png" alt="Logo 2">
+        </div>
+        <br>
+        <h1 id="main-title">กรุณากรอกข้อมูลที่ต้องการค้นหา</h1>
+        <input type="text" id="query" placeholder="กรอกข้อมูลค้นหา เช่น รหัสพนักงาน" />
+        <button id="search-btn">ค้นหา</button>
+
+        <!-- Pop-up Container -->
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <span id="popup-close" class="popup-close">&times;</span>
+                <h2 id="popup-title"></h2>
+                <div id="popup-message"></div>
+            </div>
+        </div>
+
+        <!-- Loading spinner -->
+        <div id="loading-spinner" class="hidden">
+            <p>กำลังโหลดข้อมูล...</p>
+        </div>  
+
+        <!-- Search result display area -->
+        <textarea id="result" readonly></textarea>
+        
+        <!-- Error message -->
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <footer>
+        <p>
+            <span id="footer-text"></span> 
+            | <a id="contact-link" href="contact.html">ติดต่อเรา</a>
+        </p>
+    </footer>
+    
+    <!-- External Scripts -->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
