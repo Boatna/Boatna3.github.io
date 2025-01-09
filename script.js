@@ -126,15 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
             loadingMessage: "Loading data...",
             resultTitle: "Search Results:",
         },
-        mm: {
-            title: "ရှာဖွေရန်အချက်အလက်ကိုထည့်ပါ",
-            searchPlaceholder: "ရှာဖွေရန်အချက်အလက်ကိုရိုက်ထည့်ပါ။",
-            searchButton: "ရှာပါ",
-            contactLinkText: "© 2025 ဝန်ထမ်းရှာဖွေစနစ် | ဆက်သွယ်ရန်",
-            errorMessage: "ရှာဖွေမည့်စာသားကိုထည့်ပါ",
-            loadingMessage: "ဒေတာများကိုတင်ဆောင်နေသည်...",
-            resultTitle: "ရှာဖွေမှုရလဒ်များ:",
-        },
     };
 
     const changeLanguage = (lang) => {
